@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // rock paper scissors game against a computer // computer will need randomized
+      const rockPaperScissorsGame = ["rock", "paper", "scissors"];
+      const playerSelection = "rock";
+      const computerSelection = getComputerChoice();
+      let computerScore = 0;
+      let playerScore = 0;
+
+      function getComputerChoice() {
+        const random = Math.floor(Math.random() * rockPaperScissorsGame.length);
+        return rockPaperScissorsGame[random];
+      }
+
+      function playRound(computerSelection, playerSelection) {
+        if (playerSelection === computerSelection) {
+          return "Draw";
+        } else if (
+          playerSelection === "rock" &&
+          computerSelection === "paper"
+        ) {
+          ++computerScore;
+          return "You lose! Paper beats rock";
+        } else if (
+          playerSelection === "paper" &&
+          computerSelection === "rock"
+        ) {
+          ++playerScore;
+          return "You win! Paper beats rock";
+        } else if (
+          playerSelection === "scissors" &&
+          computerSelection === "rock"
+        ) {
+          ++computerScore;
+          return "You lose! Rockbeats scissors";
+        } else if (
+          playerSelection === "paper" &&
+          computerSelection === "scissors"
+        ) {
+          ++computerScore;
+          return "You lose! Scissors beats paper";
+        } else if (
+          playerSelection === "scissors" &&
+          computerSelection === "paper"
+        ) {
+          ++playerScore;
+          return "You win! Scissors beats paper";
+        } else if (
+          playerSelection === "rock" &&
+          computerSelection === "scissors"
+        ) {
+          ++playerScore;
+          return "You win! Rock beats scissors";
+        }
+      }
+
+      function game() {
+        playRound(computerSelection, playerSelection);
+        if (computerScore === 5) {
+          return;
+          console.log("Computer Wins");
+        } else if (playerScore === 5) {
+          return;
+          console.log("You win!");
+        }
+      }
+      console.log(playRound(computerSelection, playerSelection));
+      console.log(game());
+    </script>
+  </body>
+</html>
