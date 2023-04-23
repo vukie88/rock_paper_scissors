@@ -5,75 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <script>
-      // rock paper scissors game against a computer // computer will need randomized
-      const rockPaperScissorsGame = ["rock", "paper", "scissors"];
-      const playerSelection = "rock";
-      const computerSelection = getComputerChoice();
-      let computerScore = 0;
-      let playerScore = 0;
-
-      function getComputerChoice() {
-        const random = Math.floor(Math.random() * rockPaperScissorsGame.length);
-        return rockPaperScissorsGame[random];
-      }
-
-      function playRound(computerSelection, playerSelection) {
-        if (playerSelection === computerSelection) {
-          return "Draw";
-        } else if (
-          playerSelection === "rock" &&
-          computerSelection === "paper"
-        ) {
-          ++computerScore;
-          return "You lose! Paper beats rock";
-        } else if (
-          playerSelection === "paper" &&
-          computerSelection === "rock"
-        ) {
-          ++playerScore;
-          return "You win! Paper beats rock";
-        } else if (
-          playerSelection === "scissors" &&
-          computerSelection === "rock"
-        ) {
-          ++computerScore;
-          return "You lose! Rockbeats scissors";
-        } else if (
-          playerSelection === "paper" &&
-          computerSelection === "scissors"
-        ) {
-          ++computerScore;
-          return "You lose! Scissors beats paper";
-        } else if (
-          playerSelection === "scissors" &&
-          computerSelection === "paper"
-        ) {
-          ++playerScore;
-          return "You win! Scissors beats paper";
-        } else if (
-          playerSelection === "rock" &&
-          computerSelection === "scissors"
-        ) {
-          ++playerScore;
-          return "You win! Rock beats scissors";
-        }
-      }
-
-      function game() {
-        playRound(computerSelection, playerSelection);
-        if (computerScore === 5) {
-          return;
-          console.log("Computer Wins");
-        } else if (playerScore === 5) {
-          return;
-          console.log("You win!");
-        }
-      }
-      console.log(playRound(computerSelection, playerSelection));
-      console.log(game());
-    </script>
+    <div class="game">
+      <button class="rock">Rock</button>
+      <button class="paper">Paper</button>
+      <button class="scissors">Scissors</button>
+      <button class="again">Play Again!</button>
+    </div>
+    <section class="player playerHuman">
+      <h2 class="playerName" id="player1">Your Score</h2>
+      <p class="score" id="playerScoreText">0</p>
+      <!-- <p class="currentScore" id="current1">0</p> -->
+    </section>
+    <section class="player playerComputer">
+      <h2 class="playerName" id="computer">Computer Score</h2>
+      <p class="score" id="computerScoreText">0</p>
+      <!-- <p class="currentScore" id="computerCurrentScore">0</p> -->
+    </section>
+    <section class="result"></section>
   </body>
 </html>
