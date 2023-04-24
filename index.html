@@ -5,25 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
     <div class="game">
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
-      <button class="again">Play Again!</button>
+      <input type="image" class="rock hover" src="rock.png" />
+      <input type="image" class="paper hover" src="paper.png" />
+      <input type="image" class="scissors hover" src="scissors.png" />
     </div>
-    <section class="player playerHuman">
-      <h2 class="playerName" id="player1">Your Score</h2>
-      <p class="score" id="playerScoreText">0</p>
-      <!-- <p class="currentScore" id="current1">0</p> -->
-    </section>
-    <section class="player playerComputer">
-      <h2 class="playerName" id="computer">Computer Score</h2>
-      <p class="score" id="computerScoreText">0</p>
-      <!-- <p class="currentScore" id="computerCurrentScore">0</p> -->
-    </section>
-    <section class="result"></section>
+    <div class="resultText">
+      <p class="result">Start the game</p>
+    </div>
+    <div class="scores">
+      <section class="player playerHuman">
+        <h2 class="playerName" id="human">Your Score</h2>
+        <p class="score" id="playerScoreText">0</p>
+        <!-- <p class="currentScore" id="current1">0</p> -->
+      </section>
+      <section class="player playerComputer">
+        <h2 class="playerName" id="computer">Computer Score</h2>
+        <p class="score" id="computerScoreText">0</p>
+        <!-- <p class="currentScore" id="computerCurrentScore">0</p> -->
+      </section>
+    </div>
+    <div class="bottom-div">
+      <div class="playAgainBtn">
+        <button class="again">Play Again!</button>
+      </div>
+    </div>
   </body>
 </html>
